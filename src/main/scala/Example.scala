@@ -14,3 +14,5 @@ object Example {
     image.draw
   }
 }
+
+circle(100) fillColor Color.paleGoldenrod lineColor Color.indianRed
