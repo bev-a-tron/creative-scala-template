@@ -13,6 +13,6 @@ object Example {
   def main(args: Array[String]): Unit = {
     image.draw
   }
-}
 
-circle(100) fillColor Color.paleGoldenrod lineColor Color.indianRed
+  (circle(100) fillColor Color.paleGoldenrod lineColor Color.indianRed).draw
+}
