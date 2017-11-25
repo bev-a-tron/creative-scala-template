@@ -10,9 +10,14 @@ import doodle.backend.StandardInterpreter._
 object Example {
   val image = circle(10).fillColor(Color.red) on circle(20) on circle(30)
 
-  def main(args: Array[String]): Unit = {
+  def notmain(args: Array[String]): Unit = {
     image.draw
   }
+
+  val a = "1"
+  val b = 3
+  a + b
+
 
   (circle(100) fillColor Color.paleGoldenrod lineColor Color.indianRed).draw
 }
