@@ -7,17 +7,30 @@ import doodle.backend.StandardInterpreter._
 // To use this example, open the SBT console and type:
 //
 // Example.image.draw
+
 object Example {
-  val image = circle(10).fillColor(Color.red) on circle(20) on circle(30)
 
-  def notmain(args: Array[String]): Unit = {
-    image.draw
-  }
+  val roof = Image.triangle(50, 30).lineWidth(0).fillColor(Color.brown)
+  val wall = Image.rectangle(50, 20).lineWidth(0).fillColor(Color.red) above
+    (Image.rectangle(20, 30).lineWidth(0).fillColor(Color.red) beside
+      Image.rectangle(10, 30).lineWidth(0).fillColor(Color.black) beside
+      Image.rectangle(20, 30).lineWidth(0).fillColor(Color.red))
 
-  val a = "1"
-  val b = 3
-  a + b
+  val house = roof above wall
 
+  val tree = Image.circle(30).lineWidth(0).fillColor(Color.green) above
+    Image.rectangle(10, 20).lineWidth(0).fillColor(Color.brown)
 
-  (circle(100) fillColor Color.paleGoldenrod lineColor Color.indianRed).draw
+  val house_and_tree = house beside tree
+
+  val halfstreet = (Image.rectangle(30, 2).lineWidth(0).fillColor(Color.yellow) beside
+    Image.rectangle(10, 2).lineWidth(0).fillColor(Color.black)) above
+    Image.rectangle(40,4).lineWidth(0).fillColor(Color.black)
+
+  val street = halfstreet beside halfstreet beside halfstreet beside halfstreet
+  val one_house = house_and_tree above street
+
+  val three_houses = one_house beside one_house beside one_house
+
+  three_houses.draw
 }
